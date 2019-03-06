@@ -1,5 +1,5 @@
 const contentful = require('contentful');
-const manifestConfig = require('./manifest-config');
+// const colors = require('./src/colors');
 require('dotenv').config();
 
 const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
@@ -13,9 +13,19 @@ const getAboutEntry = entry => entry.sys.contentType.sys.id === 'about';
 
 const plugins = [
   'gatsby-plugin-react-helmet',
+  'gatsby-plugin-typescript',
+  'gatsby-plugin-typescript-checker',
   {
     resolve: 'gatsby-plugin-manifest',
-    options: manifestConfig,
+    options: {
+      name: 'Mate Gatsby Starter',
+      short_name: 'Mate Gatsby Starter',
+      start_url: '/',
+      background_color: 'red',
+      theme_color: 'white',
+      display: 'minimal-ui',
+      icon: 'media/icon.png',
+    },
   },
   'gatsby-plugin-styled-components',
   {

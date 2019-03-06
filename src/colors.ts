@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   background: '#FFFFFF',
   backgroundDark: '#f0e6f6',
 
